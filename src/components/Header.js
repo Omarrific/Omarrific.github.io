@@ -1,34 +1,31 @@
-import React from 'react';
-import { Link } from 'react-scroll';
+import React, { useState } from 'react';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({
+      behavior: 'smooth',
+    });
+    setIsMenuOpen(false);
+  };
+
   return (
     <header>
-      <h1>Omar Abuhammoud's Portfolio</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="home" smooth={true} duration={500}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="projects" smooth={true} duration={500}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="about" smooth={true} duration={500}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="contact" smooth={true} duration={500}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <h1>Omar Abuhammoud</h1>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
+        <a onClick={() => scrollToSection('home')}>Home</a>
+        <a onClick={() => scrollToSection('projects')}>Projects</a>
+        <a onClick={() => scrollToSection('about')}>About</a>
+        <a onClick={() => scrollToSection('contact')}>Contact</a>
+      </div>
     </header>
   );
 };
