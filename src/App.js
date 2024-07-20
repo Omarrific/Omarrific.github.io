@@ -27,6 +27,19 @@ function App() {
 
   return (
     <div className="App">
+      <div className="night">
+        {Array.from({ length: 20 }).map((_, index) => (
+          <div
+            className="shooting_star"
+            key={index}
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 10}s`
+            }}
+          ></div>
+        ))}
+      </div>
       <Header />
       <main>
         <Home />

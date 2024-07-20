@@ -1,9 +1,94 @@
 body {
-  font-family: Arial, sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Anton', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.night {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(45deg);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shooting_star {
+  position: absolute;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 8px rgba(105, 155, 255, 1));
+  animation: tail 6000ms ease-in-out infinite, shooting 6000ms ease-in-out infinite;
+}
+
+.shooting_star::before,
+.shooting_star::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  animation: shining 6000ms ease-in-out infinite;
+}
+
+.shooting_star::after {
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 200px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 60px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(600px);
+  }
+}
+
+@keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(45 + 360deg);
+  }
 }
 
 header {
@@ -47,8 +132,8 @@ header h1 {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 100%; 
-  right: 33px; 
+  top: 100%;
+  right: 33px;
   background-color: #333;
   border: 1px solid #fff;
   width: max-content;
@@ -82,6 +167,7 @@ main {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  position: relative;
 }
 
 main::-webkit-scrollbar {
@@ -94,11 +180,11 @@ section {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid #ddd;
+  color: #fff;
 }
 
 h2 {
-  color: #333;
+  color: #fff;
 }
 
 a {

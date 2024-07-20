@@ -1,0 +1,26 @@
+#projects {
+    color: #fff; /* Change text color to white for better contrast */
+  }
+  
+  #projects h2 {
+    color: #fff; /* Ensure the heading is also white */
+  }
+  
+  #projects ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+  }
+  
+  #projects li {
+    margin: 1rem 0; /* Add some spacing between list items */
+  }
+  
+  #projects a {
+    color: #1e90ff; /* Use a light blue color for links */
+    text-decoration: underline; /* Ensure links are underlined for better visibility */
+  }
+  
+  #projects a:hover {
+    color: #1c86ee; /* Slightly darker blue for hover state */
+  }
+  
