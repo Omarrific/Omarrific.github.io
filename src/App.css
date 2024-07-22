@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   position: relative;
+  color: #fff; 
 }
 
 .night {
@@ -79,15 +80,6 @@ body {
   }
   100% {
     transform: translateX(600px);
-  }
-}
-
-@keyframes sky {
-  0% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(45 + 360deg);
   }
 }
 
@@ -177,6 +169,7 @@ main::-webkit-scrollbar {
 section {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
