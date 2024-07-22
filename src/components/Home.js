@@ -3,6 +3,12 @@ import Typical from 'react-typical';
 import './Home.css';
 
 const Home = () => {
+  const scrollToProjects = () => {
+    document.getElementById('projects').scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section id="home">
       <h2>
@@ -22,6 +28,7 @@ const Home = () => {
           className="typing-effect"
         />
       </p>
+      <button className="button" onClick={scrollToProjects}>Go to Projects</button>
     </section>
   );
 };

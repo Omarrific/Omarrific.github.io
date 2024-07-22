@@ -1,30 +1,12 @@
-import React, { useEffect } from 'react';
-import Header from './components/Header';
+import React from 'react';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
+import DropdownMenu from './components/DropdownMenu';
 import './App.css';
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector('header');
-      const homeSection = document.querySelector('#home');
-      const homeSectionBottom = homeSection.getBoundingClientRect().bottom;
-
-      if (homeSectionBottom <= 0) {
-        header.classList.remove('hidden');
-      } else {
-        header.classList.add('hidden');
-      }
-    };
-
-    const main = document.querySelector('main');
-    main.addEventListener('scroll', handleScroll);
-    return () => main.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="App">
       <div className="night">
@@ -40,11 +22,11 @@ function App() {
           ></div>
         ))}
       </div>
-      <Header />
+      <DropdownMenu />
       <main>
         <Home />
-        <Projects />
         <About />
+        <Projects />
         <Contact />
       </main>
     </div>

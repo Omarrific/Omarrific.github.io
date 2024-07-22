@@ -1,8 +1,9 @@
+
 body {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   height: 100vh;
   overflow: hidden;
-  font-family: 'Anton', sans-serif;
+  font-family: sans-serif; 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -81,77 +82,6 @@ body {
   100% {
     transform: translateX(600px);
   }
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  width: 100%;
-  z-index: 1000;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-header.hidden {
-  display: none;
-}
-
-header h1 {
-  margin: 0;
-}
-
-.menu-icon {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  right: 4rem;
-  z-index: 1100;
-}
-
-.menu-icon div {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-}
-
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 33px;
-  background-color: #333;
-  border: 1px solid #fff;
-  width: max-content;
-  min-width: 125px;
-  text-align: center;
-}
-
-.dropdown-menu a {
-  color: #fff;
-  padding: 1rem;
-  text-decoration: none;
-  cursor: pointer;
-  display: block;
-}
-
-.dropdown-menu a:hover {
-  background-color: #444;
-}
-
-.dropdown-menu.show {
-  display: flex;
-}
-
-.App {
-  text-align: center;
-  position: relative;
 }
 
 main {
