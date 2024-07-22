@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaJava } from 'react-icons/fa';
+import { SiJavascript, SiPython, SiHtml5, SiCss3, SiReact, SiCsharp, SiGodotengine } from 'react-icons/si';
 import './About.css';
 import headshot from '../images/headshot.jpg';
 
@@ -31,9 +32,20 @@ const About = () => {
             Hi! I'm Omar, a passionate Computer Science student at Cornell University,
             driven by curiosity and creativity. My journey in technology blends a solid
             foundation in both software and hardware, allowing me to approach challenges
-            with a unique perspective. I thrive on innivation and problem-solving, always 
+            with a unique perspective. I thrive on innovation and problem-solving, always 
             eager to dive into new projects and explore emerging technologies.
           </p>
+          <div className="tech-icons">
+            <FaJava className="tech-icon java" title="Java" />
+            <SiPython className="tech-icon python" title="Python" />
+            <SiHtml5 className="tech-icon html5" title="HTML5" />
+            <SiCss3 className="tech-icon css" title="CSS" />
+            <SiJavascript className="tech-icon javascript" title="JavaScript" />
+            <SiReact className="tech-icon react" title="React" />
+            <SiCsharp className="tech-icon csharp" title="C#" />
+            <SiGodotengine className="tech-icon godot" title="Godot" />
+            <FaGithub className="tech-icon github" title="GitHub" />
+          </div>
         </div>
         <img src={headshot} alt="Omar Abuhammoud" className="profile-picture" />
       </div>

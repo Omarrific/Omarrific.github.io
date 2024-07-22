@@ -4,15 +4,16 @@ import './Home.css';
 
 const Home = () => {
   const scrollToProjects = () => {
-    document.getElementById('projects').scrollIntoView({
-      behavior: 'smooth',
-    });
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <section id="home">
       <h2>
-        Hi, I'm <span className="color-change">Omar </span>
+        Hi, I'm <span className="color-change">Omar</span>
       </h2>
       <p>
         I'm a{' '}

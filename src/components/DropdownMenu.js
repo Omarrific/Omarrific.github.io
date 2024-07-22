@@ -4,8 +4,13 @@ import './DropdownMenu.css';
 const DropdownMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isHomeVisible, setIsHomeVisible] = useState(true);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    if (!isHomeVisible) {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
 
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({
@@ -20,6 +25,10 @@ const DropdownMenu = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsMenuVisible(!entry.isIntersecting);
+        setIsHomeVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsMenuOpen(false);
+        }
       },
       {
         root: null,
@@ -40,21 +49,22 @@ const DropdownMenu = () => {
   }, []);
 
   return (
-    isMenuVisible && (
-      <div className="dropdown-menu-container">
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
-          <a onClick={() => scrollToSection('home')}>Home</a>
-          <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
-        </div>
+    <div className="dropdown-menu-container">
+      <div
+        className={`menu-icon ${!isHomeVisible ? 'show' : ''} ${isHomeVisible ? 'disabled' : ''}`}
+        onClick={toggleMenu}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    )
+      <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
+        <a onClick={() => scrollToSection('home')}>Home</a>
+        <a onClick={() => scrollToSection('about')}>About</a>
+        <a onClick={() => scrollToSection('projects')}>Projects</a>
+        <a onClick={() => scrollToSection('contact')}>Contact</a>
+      </div>
+    </div>
   );
 };
 
