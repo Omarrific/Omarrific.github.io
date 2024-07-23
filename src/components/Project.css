@@ -62,13 +62,28 @@
 
 .project-links a {
   margin-right: 0.5rem;
-  color: #1e90ff;
+  color: #fff;
   font-size: 1.5rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-.project-links a:hover {
-  color: #fff;
+.github-icon{
+  font-size: 3rem;
+  transition: color 0.3s ease;
+}
+
+.github-icon:hover {
+
+  color: #6e6e6e;
+}
+
+.external-link-icon{
+  font-size: 2.75rem;
+  transition: color 0.3s ease;
+}
+.external-link-icon:hover {
+
+  color: #1e90ff; 
 }
 
 .more-to-come {

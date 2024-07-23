@@ -16,17 +16,16 @@ const Project = ({ project, index }) => {
         <h4>{project.subheading}</h4>
         <p>{project.blurb}</p>
         <div className="project-links">
-            {project.links.itch && (
-                <a href={project.links.itch} target="_blank" rel="noopener noreferrer">
-                <FaExternalLinkAlt className="external-link-icon" />
-                </a>
-            )}
+          {project.links.itch && (
+            <a href={project.links.itch} target="_blank" rel="noopener noreferrer">
+              <FaExternalLinkAlt className="external-link-icon" />
+            </a>
+          )}
           {project.links.github && (
             <a href={project.links.github} target="_blank" rel="noopener noreferrer">
               <FaGithub className="github-icon" />
             </a>
           )}
-
         </div>
       </div>
     </div>

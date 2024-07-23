@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope, FaJava } from 'react-icons/fa';
 import { SiJavascript, SiPython, SiHtml5, SiCss3, SiReact, SiCsharp, SiGodotengine } from 'react-icons/si';
+import { LuFileText } from 'react-icons/lu';
 import './About.css';
 import headshot from '../images/headshot.jpg';
+import resume from '../Omar_Abuhammoud_Resume.pdf';
 
 const About = () => {
   const scrollToContact = () => {
@@ -27,13 +29,17 @@ const About = () => {
             <button className="icon email" onClick={scrollToContact}>
               <FaEnvelope />
             </button>
+            <a href={resume} download="Omar_Abuhammoud_Resume.pdf" className="icon resume" aria-label="Download Resume">
+              <LuFileText />
+            </a>
           </div>
           <p className="blurb">
             Hi! I'm Omar, a passionate Computer Science student at Cornell University,
             driven by curiosity and creativity. My journey in technology blends a solid
             foundation in both software and hardware, allowing me to approach challenges
             with a unique perspective. I thrive on innovation and problem-solving, always 
-            eager to dive into new projects and explore emerging technologies.
+            eager to dive into new projects and explore emerging technologies. You can find 
+            my LinkedIn, GitHub, Email, and resume above!
           </p>
           <div className="tech-icons">
             <FaJava className="tech-icon java" title="Java" />
