@@ -1,0 +1,97 @@
+.contact {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact label {
+    font-size: 1.5rem;
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background-color: #d3d3d3;
+    color: #000;
+    padding: 1.5rem;
+}
+
+.contact textarea {
+    height: 300px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.contact button {
+    padding: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+.status {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        width: 90%;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact label {
+        font-size: 1.25rem;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .contact textarea {
+        height: 250px;
+    }
+
+    .contact button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
