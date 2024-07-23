@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
@@ -9,6 +9,7 @@ const Contact = () => {
     message: '',
   });
   const [status, setStatus] = useState('');
+  const [isStatusVisible, setIsStatusVisible] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,11 +22,24 @@ const Contact = () => {
     emailjs.sendForm('service_iwfhpks', 'template_aucymo8', e.target, '30xBIZxBQFPVLzsiM')
       .then((result) => {
         setStatus('Message sent successfully!');
+        setIsStatusVisible(true);
         setFormData({ email: '', subject: '', message: '' });
       }, (error) => {
         setStatus('Failed to send message. Please try again.');
+        setIsStatusVisible(true);
       });
   };
+
+  useEffect(() => {
+    if (isStatusVisible) {
+      const fadeOut = () => setIsStatusVisible(false); 
+      window.addEventListener('scroll', fadeOut, true);
+
+      return () => {
+        window.removeEventListener('scroll', fadeOut, true);
+      };
+    }
+  }, [isStatusVisible]);
 
   return (
     <section id="contact" className="contact">
@@ -62,7 +76,11 @@ const Contact = () => {
 
         <button type="submit">Send</button>
       </form>
-      {status && <p className="status">{status}</p>}
+      {status && (
+        <p className={`status ${isStatusVisible ? 'fade-in' : 'fade-out'}`}>
+          {status}
+        </p>
+      )}
     </section>
   );
 };

@@ -48,6 +48,20 @@ const DropdownMenu = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll,true);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll,true );
+    };
+  }, [isMenuOpen]);
+
   return (
     <div className="dropdown-menu-container">
       <div
