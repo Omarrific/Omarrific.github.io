@@ -29,6 +29,7 @@
 .contact input,
 .contact textarea {
     width: 100%;
+    min-width: 400px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
