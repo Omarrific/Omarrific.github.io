@@ -5,6 +5,7 @@
   min-height: 100vh;
   padding: 4rem;
   color: #fff;
+  transition: 0.5s ease-in-out;
 }
 
 .about-content {
