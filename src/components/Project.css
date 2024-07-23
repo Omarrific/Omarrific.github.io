@@ -1,21 +1,14 @@
-.projects {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-}
-
-.projects-title {
-  font-size: 2rem; 
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
 .project {
   display: flex;
   align-items: center;
   margin: 2rem 0;
   flex-wrap: wrap;
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out; 
+}
+
+.project.visible {
+  opacity: 1;
 }
 
 .project.left {
@@ -35,7 +28,7 @@
 .slide-image {
   width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .project-details {
@@ -45,18 +38,18 @@
 }
 
 .project-details h3 {
-  font-size: 2rem; 
+  font-size: 2rem;
   margin: 0.5rem 0;
 }
 
 .project-details h4 {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
   margin: 0.5rem 0;
 }
 
 .project-details p {
   font-size: 1rem;
-  line-height: 1.6; 
+  line-height: 1.6;
   margin: 0.5rem 0;
 }
 
@@ -67,23 +60,22 @@
   transition: color 0.3s ease;
 }
 
-.github-icon{
+.github-icon {
   font-size: 3rem;
   transition: color 0.3s ease;
 }
 
 .github-icon:hover {
-
   color: #6e6e6e;
 }
 
-.external-link-icon{
+.external-link-icon {
   font-size: 2.75rem;
   transition: color 0.3s ease;
 }
-.external-link-icon:hover {
 
-  color: #1e90ff; 
+.external-link-icon:hover {
+  color: #1e90ff;
 }
 
 .more-to-come {
@@ -93,7 +85,7 @@
 
 .more-to-come p {
   font-size: 1.5rem;
-  color: #666; 
+  color: #666;
 }
 
 @media (max-width: 768px) {

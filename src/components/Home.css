@@ -1,6 +1,7 @@
 @import '../fonts/fonts.css';
 #home {
   padding-bottom: 0rem; 
+  transition: opacity 0.5s ease-in-out; 
 }
 
 #home h2 {
