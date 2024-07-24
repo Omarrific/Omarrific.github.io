@@ -1,5 +1,4 @@
 import React from 'react';
-import './Project.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import ImageSlideshow from './ImageSlideshow';
 
@@ -8,9 +7,7 @@ const Project = ({ project, index }) => {
 
   return (
     <div className={`project ${isEven ? 'left' : 'right'}`}>
-      <div className={'slideshow-container'}>
         <ImageSlideshow images={project.images} />
-      </div>
       <div className={`project-details`}>
         <h3>{project.name}</h3>
         <h4>{project.subheading}</h4>

@@ -1,6 +1,7 @@
 @import '../fonts/fonts.css';
 
 #home {
+  height : 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +9,6 @@
   align-items: center;
   padding-bottom: 0rem; 
   text-align: center;
-  transition: 0.5s ease-in-out;
 }
 
 #home h2 {

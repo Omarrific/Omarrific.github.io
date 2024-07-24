@@ -113,17 +113,12 @@ section {
   align-items: center;
   padding: 1rem;
   color: #fff;
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 1s ease-in-out;
+
+  height: auto;
 }
 
-section.visible {
-  opacity: 1;
-}
-
-section.hidden {
-  opacity: 0;
-}
 
 h2 {
   color: #fff;

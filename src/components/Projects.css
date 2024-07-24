@@ -1,10 +1,15 @@
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .project {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 2rem 0;
-
-  transition: opacity 0.5s ease-in-out;
+  margin: 2rem;
+  justify-content: center;
 }
 
 .project.left {
@@ -17,14 +22,8 @@
 
 .slideshow-container {
   flex: 1;
-  max-width: 50%;
+  max-width: 100%;
   margin: 0 1rem;
-}
-
-.slide-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 .project-details {
@@ -84,7 +83,7 @@
   color: #666;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .project {
     flex-direction: column;
     text-align: center;
@@ -100,7 +99,7 @@
 
   .slide-image {
     height: 100%; 
-    object-fit: cover; 
+    object-fit:  fill; 
   }
 
   .project-details {
