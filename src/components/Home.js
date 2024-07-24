@@ -15,20 +15,21 @@ const Home = () => {
       <h2>
         Hi, I'm <span className="color-change">Omar</span>
       </h2>
-      <p>
-        I'm a{' '}
-        <Typical
-          loop={Infinity}
-          wrapper="span"
-          steps={[
-            'full stack developer',
-            2000,
-            'software developer',
-            2000,
-          ]}
-          className="typing-effect"
-        />
-      </p>
+      <div className="text-container">
+        <div className="text-part">I'm a </div>
+        <div className="typing-part">
+          <Typical
+            loop={Infinity}
+            wrapper="span"
+            steps={[
+              'full stack developer',
+              2000,
+              'software developer',
+              2000,
+            ]}
+          />
+        </div>
+      </div>
       <button className="button" onClick={scrollToProjects}>Go to Projects</button>
     </section>
   );

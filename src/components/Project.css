@@ -3,7 +3,7 @@
   align-items: center;
   margin: 2rem 0;
   flex-wrap: wrap;
-  transition: opacity 0.5s ease-in-out; 
+  transition: opacity 0.5s ease-in-out;
 }
 
 .project.left {
@@ -91,10 +91,16 @@
 
   .slideshow-container {
     width: 100%;
-    margin: 0;
+    height: 60vh;
+    margin: 1rem 0; 
+  }
+
+  .slide-image {
+    height: 100%;
   }
 
   .project-details {
     margin-top: 1rem;
+    order: 1; 
   }
 }

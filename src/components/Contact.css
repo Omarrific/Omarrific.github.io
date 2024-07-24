@@ -80,8 +80,9 @@
 }
 
 @media (max-width: 768px) {
-    .contact {
-        width: 90%;
+    .contact input,
+    .contact textarea {
+        min-width: 300px;
     }
 
     .contact h2 {

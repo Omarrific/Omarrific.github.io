@@ -1,14 +1,41 @@
-@import '../fonts/fonts.css'; 
+@import '../fonts/fonts.css';
+
 #home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 0rem; 
-  transition: opacity 0.5s ease-in-out; 
+  text-align: center;
+  transition: 0.5s ease-in-out;
 }
 
 #home h2 {
   font-size: 5rem;
 }
 
-p {
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  max-width: 80rem;
+  overflow: hidden;
+}
+
+.text-part {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.2;
+  margin-right: 0.5rem;
+}
+
+.typing-part {
+  font-weight: bold;
+  display: inline-block;
   font-size: 3rem;
 }
 
@@ -22,11 +49,6 @@ p {
   50% { color: #8A2BE2; }
   75% { color: #5A0D91; }
   100% { color: #87CEEB; }
-}
-
-.typing-effect {
-  font-weight: bold;
-  display: inline-block;
 }
 
 .button {
@@ -49,4 +71,24 @@ p {
 
 .button:focus {
   outline: none; 
+}
+
+@media (max-width: 768px) {
+  #home {
+    padding-bottom: 2rem;
+  }
+
+  .text-container {
+    flex-direction: column;
+  }
+
+  .text-part, .typing-part {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+  }
+
+  .typing-part {
+    height: 150px;
+  }
 }

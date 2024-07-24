@@ -8,10 +8,10 @@ const Project = ({ project, index }) => {
 
   return (
     <div className={`project ${isEven ? 'left' : 'right'}`}>
-      <div className={`slideshow-container ${isEven ? 'left' : 'right'}`}>
+      <div className={'slideshow-container'}>
         <ImageSlideshow images={project.images} />
       </div>
-      <div className={`project-details ${isEven ? 'left' : 'right'}`}>
+      <div className={`project-details`}>
         <h3>{project.name}</h3>
         <h4>{project.subheading}</h4>
         <p>{project.blurb}</p>
