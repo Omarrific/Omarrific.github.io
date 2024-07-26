@@ -14,7 +14,7 @@ const Project = ({ project, index }) => {
         <p>{project.blurb}</p>
         <div className="project-links">
           {project.links.itch && (
-            <a href={project.links.itch} target="_blank" rel="noopener noreferrer">
+            <a href={project.links.ext} target="_blank" rel="noopener noreferrer">
               <FaExternalLinkAlt className="external-link-icon" />
             </a>
           )}
