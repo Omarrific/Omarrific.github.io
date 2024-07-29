@@ -7,14 +7,14 @@ const Project = ({ project, index }) => {
 
   return (
     <div className={`project ${isEven ? 'left' : 'right'}`}>
-        <ImageSlideshow images={project.images} />
+      <ImageSlideshow images={project.images} />
       <div className={`project-details`}>
         <h3>{project.name}</h3>
         <h4>{project.subheading}</h4>
         <p>{project.blurb}</p>
         <div className="project-links">
           {project.links.itch && (
-            <a href={project.links.ext} target="_blank" rel="noopener noreferrer">
+            <a href={project.links.itch} target="_blank" rel="noopener noreferrer">
               <FaExternalLinkAlt className="external-link-icon" />
             </a>
           )}
