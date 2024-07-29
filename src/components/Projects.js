@@ -4,6 +4,7 @@ import chronobreak1 from '../images/projectImages/project1/chrono1.png';
 import chronobreak2 from '../images/projectImages/project1/chrono2.png';
 import earthdex1 from '../images/projectImages/project2/earthdex1.png';
 import earthdex2 from '../images/projectImages/project2/earthdex2.png';
+import earthdex3 from '../images/projectImages/project2/earthdex3.png';
 import './Projects.css';
 
 const projects = [
@@ -21,7 +22,7 @@ const projects = [
     name: "Earthdex",
     subheading: "Your Real-Life Pokédex",
     blurb: "Earthdex is an application that uses Tensorflow's image object identification models and OpenAI's text generation models to create Pokédex-like entries of real-life objects!",
-    images: [earthdex1, earthdex2],
+    images: [earthdex1, earthdex2, earthdex3],
     links: {
       github: "https://github.com/Omarrific/earthdex",
       itch: "https://earthdex.vercel.app/"
