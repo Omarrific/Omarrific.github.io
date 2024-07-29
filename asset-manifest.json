@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.4f4e813a.css",
-    "main.js": "/static/js/main.dfe133bf.js",
+    "main.js": "/static/js/main.cd46f143.js",
     "static/js/453.bb828c5d.chunk.js": "/static/js/453.bb828c5d.chunk.js",
     "static/media/headshot.jpg": "/static/media/headshot.4ea5d8fa80c67d9fb5ad.jpg",
+    "static/media/earthdex3.png": "/static/media/earthdex3.be6fa2fdc88f96acd618.png",
     "static/media/chrono1.png": "/static/media/chrono1.0941e49d925462e8d04a.png",
+    "static/media/earthdex1.png": "/static/media/earthdex1.9dfc3acaf94893842cc7.png",
+    "static/media/earthdex2.png": "/static/media/earthdex2.17e082d4018e66d9aa7e.png",
     "static/media/chrono2.png": "/static/media/chrono2.c07f20e1c04a211238d8.png",
     "static/media/Omar_Abuhammoud_Resume.pdf": "/static/media/Omar_Abuhammoud_Resume.6e80877e4c1467304ef6.pdf",
-    "static/media/earthdex1.png": "/static/media/earthdex1.0df27e728665c03074c1.png",
     "static/media/regular.otf": "/static/media/regular.ccc51e2a3c40ce9bca53.otf",
     "static/media/bold.otf": "/static/media/bold.2ac7f694be4905551147.otf",
-    "static/media/earthdex2.png": "/static/media/earthdex2.43f179fbb64080e3dc57.png",
     "index.html": "/index.html",
     "main.4f4e813a.css.map": "/static/css/main.4f4e813a.css.map",
-    "main.dfe133bf.js.map": "/static/js/main.dfe133bf.js.map",
+    "main.cd46f143.js.map": "/static/js/main.cd46f143.js.map",
     "453.bb828c5d.chunk.js.map": "/static/js/453.bb828c5d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4f4e813a.css",
-    "static/js/main.dfe133bf.js"
+    "static/js/main.cd46f143.js"
   ]
 }
