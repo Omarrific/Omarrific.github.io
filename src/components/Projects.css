@@ -1,109 +1,56 @@
-.projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 2rem;
-  justify-content: center;
-}
-
-.project.left {
-  flex-direction: row;
-}
-
-.project.right {
-  flex-direction: row-reverse;
-}
-
-.slideshow-container {
-  flex: 1;
-  max-width: 100%;
-  margin: 0 1rem;
-}
-
-.project-details {
-  flex: 1;
-  padding: 0 2rem;
-  text-align: left;
-}
-
-.project-details h3 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
-}
-
-.project-details h4 {
-  font-size: 1.25rem;
-  margin: 0.5rem 0;
-}
-
-.project-details p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0.5rem 0;
-}
-
-.project-links a {
-  margin-right: 0.5rem;
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.github-icon {
-  font-size: 3rem;
-  transition: color 0.3s ease;
-}
-
-.github-icon:hover {
-  color: #6e6e6e;
-}
-
-.external-link-icon {
-  font-size: 2.75rem;
-  transition: color 0.3s ease;
-}
-
-.external-link-icon:hover {
-  color: #1e90ff;
-}
-
-.more-to-come {
+.projects-section {
+  padding: 2rem;
   text-align: center;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.more-to-come p {
-  font-size: 1.5rem;
-  color: #666;
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 
-@media (max-width: 600px) {
-  .project {
-    flex-direction: column;
-    text-align: center;
-  }
+.swiper {
+  width: 90%; 
+  max-width: 1200px;
+  height: 60vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; 
+}
 
-  .slideshow-container {
-    width: 100%;
-    min-width: 300px;
-    height: 50vh;
-    margin: 0; 
-    order: 1;
-  }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  max-height: 100%;
+  width: 100%; 
+}
 
-  .slide-image {
-    height: 100%; 
-    object-fit:  fill; 
-  }
 
-  .project-details {
-    margin-top: 1rem;
-    order: 2; 
-  }
+
+.swiper-pagination {
+  bottom: 15px;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+  opacity: 0.7;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0056b3;
+  opacity: 1;
 }

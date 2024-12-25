@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope, FaJava } from 'react-icons/fa';
-import { SiJavascript, SiPython, SiHtml5, SiCss3, SiReact, SiCsharp, SiGodotengine } from 'react-icons/si';
+import { SiJavascript, SiPython, SiHtml5, SiCss3, SiReact, SiCsharp, SiGodotengine, SiC, SiCplusplus } from 'react-icons/si';
 import { LuFileText } from 'react-icons/lu';
 import './About.css';
 import headshot from '../images/headshot.jpg';
@@ -48,6 +48,8 @@ const About = () => {
             <SiCss3 className="tech-icon css" title="CSS" />
             <SiJavascript className="tech-icon javascript" title="JavaScript" />
             <SiReact className="tech-icon react" title="React" />
+            <SiC className="tech-icon c" title="C" />
+            <SiCplusplus className="tech-icon cpp" title="Cpp" />
             <SiCsharp className="tech-icon csharp" title="C#" />
             <SiGodotengine className="tech-icon godot" title="Godot" />
             <FaGithub className="tech-icon github" title="GitHub" />

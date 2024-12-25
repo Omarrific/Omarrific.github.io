@@ -54,7 +54,11 @@ h2 {
 .icon {
   font-size: 3rem;
   color: #fff;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icon:hover{
+  transform: scale(1.2);
 }
 
 .icon.linkedin:hover {
@@ -190,6 +194,13 @@ h2 {
   color: #1e90ff;
 }
 
+.tech-icon.c:hover {
+  color: #283593;
+}
+
+.tech-icon.cpp:hover {
+  color: #283593;
+}
 .tech-icon.csharp:hover {
   color: purple;
 }

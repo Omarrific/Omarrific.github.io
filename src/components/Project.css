@@ -1,0 +1,70 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-details {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .project-details h3 {
+    font-size: 1.75rem;
+    color: #579eeb;
+    font-weight: 600;
+  }
+  
+  .project-details h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .project-details p {
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .project-links a {
+    display: inline-block;
+    font-size: 1.25rem;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .project-links a:hover {
+    color: #007bff;
+  }
+  
+  .project-links .external-link-icon,
+  .project-links .github-icon {
+    width: 36px; 
+    height: 36px; 
+    transition: transform 0.3s; 
+  }
+  
+  .project-links a:hover .external-link-icon,
+  .project-links a:hover .github-icon {
+    transform: scale(1.2); 
+  }
+  
+  
+  .project img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  

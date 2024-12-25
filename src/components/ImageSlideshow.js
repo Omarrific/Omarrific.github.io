@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
-import './ImageSlideshow.css';
+import React, { useState, useEffect } from "react";
+import "./ImageSlideshow.css";
 
 const ImageSlideshow = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); 
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+    return () => clearInterval(intervalId); 
+  }, [images.length]);
 
   return (
     <div className="slideshow">
-      <button onClick={prevSlide} className="slideshow-button">‹</button>
-      <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="slide-image" />
-      <button onClick={nextSlide} className="slideshow-button">›</button>
+      <div className="slideshow-wrapper">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className={`slide ${index === currentIndex ? "visible" : ""}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
