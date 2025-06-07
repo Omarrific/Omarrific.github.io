@@ -1,0 +1,26 @@
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  background: #191919;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: #191919;
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.app.stage-reveal .gradient-overlay {
+  clip-path: circle(150% at 50% 50%);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}

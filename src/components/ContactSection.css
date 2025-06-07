@@ -1,0 +1,131 @@
+.contact-section {
+    background: #191919;
+    padding: 72px 5%;
+    font-family: 'Jacques Francois', serif;
+    color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-title {
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .contact-underline {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 17px;
+    background: #00ADB5;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgba(0, 173, 181, 0.25);
+  }
+  
+  .contact-card {
+    background: #2d2d2d;
+    border-radius: 20px;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    background: #3a3a3a;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #bbbbbb;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    background: #4a4a4a;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 173, 181, 0.7);
+  }
+  
+  .contact-submit {
+    margin-top: 24px;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #00ADB5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-submit:disabled {
+    background: #007b7f;
+    cursor: default;
+  }
+  
+  .contact-submit:hover:not(:disabled) {
+    background: #00999f;
+    transform: translateY(-2px);
+  }
+  
+  .contact-status {
+    margin-top: 16px;
+    font-size: 16px;
+    text-align: center;
+    color: #00ffcc;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-card {
+      width: 90%;
+      padding: 0 16px;    
+      box-sizing: border-box; 
+    
+    }
+    .contact-form label {
+      font-size: 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+    .contact-submit {
+      font-size: 16px;
+      padding: 12px 0;
+    }
+    .contact-status {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,29 @@
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: transparent;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#star-container.fade-in {
+  animation: containerFade 1s ease forwards;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  will-change: transform;
+}
+
+@keyframes containerFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

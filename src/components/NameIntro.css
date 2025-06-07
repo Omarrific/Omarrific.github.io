@@ -1,0 +1,58 @@
+
+/* https://www.fontshare.com/fonts/satoshi OR https://www.fontshare.com/fonts/clash-display */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+
+.name-intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  overflow: visible;
+  font-family: 'Poppins', sans-serif;
+}
+
+.name-intro svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+#name-path {
+  font-size: 10rem;                 
+  fill: cyan;                     
+  stroke: white;                    
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: var(--path-length);
+  stroke-dashoffset: var(--path-length);
+  fill-opacity: 0;
+
+  animation:
+    draw 4s ease forwards,
+    fadeIn 1s ease forwards 2s;   
+}
+.name-intro.stars,
+.name-intro.reveal {
+  animation: moveNameUp 1s forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeIn {
+  to { fill-opacity: 1; }
+}
+
+@keyframes moveNameUp {
+  to {
+    top: 2%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+}
