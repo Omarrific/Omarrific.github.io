@@ -10,6 +10,17 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+    {
+    title: 'Software Engineer Intern',
+    company: 'Bloomberg LP',
+    date: 'June 2025 - Present',
+    bullets: [
+      'Spearheaded the integration and synchronization between Bloomberg’s application and external services, ensuring real-time data consistency across platforms.',
+      'Designed and implemented responsive UI components, optimizing performance through asynchronous calls and multithreading to enhance usability and reduce latency.',
+      'Developed and maintained API workflows, retrieving and processing data from distributed databases to support cross-system operations.'
+    ],
+    link: 'https://www.bloomberg.com/company/?utm_source=bloomberg-menu&utm_medium=bcom'
+  },
   {
     title: 'Robotics Developer',
     company: 'Cornell Cup Robotics',

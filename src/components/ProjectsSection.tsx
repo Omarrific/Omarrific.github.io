@@ -3,6 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import capture from '../images/capture.png';
 import chronobreak from '../images/chronobreak.png';
 import earthdex from '../images/earthdex.png';
+import frostbitten from '../images/frostbitten.png';
 
 import './ProjectsSection.css';
 
@@ -10,13 +11,22 @@ import './ProjectsSection.css';
 interface Project {
   title: string;
   description: string;
-  gitLink: string;
+  gitLink?: string;
   liveLink?: string; 
   techStack: string[];
   imageSrc: string;
 }
 
 const projects: Project[] = [
+  {
+    title: 'Frostbitten',
+    description:
+      'An ice-themed puzzle platformer where players master momentum to solve physics-driven challenges.',
+    gitLink: '',
+    liveLink: 'https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/frostbitten/',
+    techStack: ['Java', 'LibGDX'],
+    imageSrc: frostbitten
+  },
   {
     title: 'Capture',
     description:
@@ -117,6 +127,7 @@ export default function ProjectsSection() {
                   ))}
                 </ul>
                 <div className="project-links">
+                  {proj.gitLink && proj.gitLink.trim().length > 0 && (
                   <a
                     href={proj.gitLink}
                     target="_blank"
@@ -125,6 +136,7 @@ export default function ProjectsSection() {
                   >
                     <FaGithub size={24} />
                   </a>
+                  )}
                   {proj.liveLink && proj.liveLink.trim().length > 0 && (
                     <a
                       href={proj.liveLink}
