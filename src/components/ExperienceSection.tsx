@@ -11,18 +11,7 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
-    title: 'Software Engineer Intern',
-    company: 'Bloomberg LP',
-    date: 'June 2025 - Present',
-    bullets: [
-      'Spearheaded the integration and synchronization between Bloomberg’s application and external services, ensuring real-time data consistency across platforms.',
-      'Designed and implemented responsive UI components, optimizing performance through asynchronous calls and multithreading to enhance usability and reduce latency.',
-      'Developed and maintained API workflows, retrieving and processing data from distributed databases to support cross-system operations.'
-    ],
-    link: 'https://www.bloomberg.com/company/?utm_source=bloomberg-menu&utm_medium=bcom'
-  },
-  {
-    title: 'Robotics Developer',
+    title: 'Robotics Lead',
     company: 'Cornell Cup Robotics',
     date: 'Feb 2024 – Present',
     bullets: [
@@ -31,6 +20,17 @@ const experiences: Experience[] = [
       'Spearheading the development of a bipedal walking robot using neural networks for movement learning and enabling users to control the robot’s actions through VR integration'
     ],
     link: 'https://cornellcuprobotics.com/index.html'
+  },
+    {
+    title: 'Software Engineer Intern',
+    company: 'Bloomberg LP',
+    date: 'Jun 2025 - Aug 2025',
+    bullets: [
+      'Spearheaded the integration and synchronization between Bloomberg’s application and external services, ensuring real-time data consistency across platforms.',
+      'Designed and implemented responsive UI components, optimizing performance through asynchronous calls and multithreading to enhance usability and reduce latency.',
+      'Developed and maintained API workflows, retrieving and processing data from distributed databases to support cross-system operations.'
+    ],
+    link: 'https://www.bloomberg.com/company/?utm_source=bloomberg-menu&utm_medium=bcom'
   },
   {
     title: 'Full Stack Intern',
