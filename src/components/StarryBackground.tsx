@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './StarryBackground.css';
 
 const MAX_STARS = 100;
+// Cap frame delta so returning to a background tab doesn't teleport the field.
+const MAX_FRAME_SECONDS = 0.1;
 
 interface Star {
-  el: HTMLDivElement;
   x: number;
   y: number;
   speed: number;
@@ -12,79 +13,91 @@ interface Star {
 }
 
 const StarBackground: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
-    const container = document.createElement('div');
-    container.id = 'star-container';
-    container.classList.add('fade-in');
-    document.body.appendChild(container);
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
 
-    let stars: Star[] = [];
+    let width = 0;
+    let height = 0;
+    let animationFrameId = 0;
     let lastTimestamp = performance.now();
-    let animationFrameId: number;
-    let pauseTime = 0;
 
-    const createStar = (): Star => {
-      const size = Math.random() * 2 + 1;
-      const speed = Math.random() * 50 + 50;
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
-
-      const el = document.createElement('div');
-      el.className = 'star';
-      el.style.width = `${size}px`;
-      el.style.height = `${size}px`;
-      el.style.left = `${x}px`;
-      el.style.top = `${y}px`;
-
-      container.appendChild(el);
-
-      return { el, x, y, speed, size };
+    const resize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const animate = (time: number) => {
-      const delta = (time - lastTimestamp) / 1000;
-      lastTimestamp = time;
+    const createStar = (): Star => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      speed: Math.random() * 50 + 50,
+      size: Math.random() * 2 + 1,
+    });
 
-      stars.forEach((star) => {
-        star.y -= star.speed * delta;
-
-        if (star.y < -star.size) {
-          star.y = window.innerHeight + star.size;
-          star.x = Math.random() * window.innerWidth;
-        }
-
-        star.el.style.top  = `${star.y}px`;
-        star.el.style.left = `${star.x}px`;
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-    for (let i = 0; i < MAX_STARS; i++) {
-      stars.push(createStar());
-    }
-
-    animationFrameId = requestAnimationFrame(animate);
-
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        pauseTime = performance.now();
-      } else {
-        const now = performance.now();
-        const delta = now - pauseTime;
-        lastTimestamp += delta; 
+    const draw = () => {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      for (const star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size / 2, 0, Math.PI * 2);
+        ctx.fill();
       }
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    const animate = (time: number) => {
+      const delta = Math.min((time - lastTimestamp) / 1000, MAX_FRAME_SECONDS);
+      lastTimestamp = time;
+
+      for (const star of stars) {
+        star.y -= star.speed * delta;
+        if (star.y < -star.size) {
+          star.y = height + star.size;
+          star.x = Math.random() * width;
+        }
+      }
+
+      draw();
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    resize();
+    const stars: Star[] = Array.from({ length: MAX_STARS }, createStar);
+
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const start = () => {
+      cancelAnimationFrame(animationFrameId);
+      if (motionQuery.matches) {
+        draw();
+      } else {
+        lastTimestamp = performance.now();
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    };
+
+    const handleResize = () => {
+      resize();
+      if (motionQuery.matches) draw();
+    };
+
+    start();
+    window.addEventListener('resize', handleResize);
+    motionQuery.addEventListener('change', start);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      container.remove();
+      window.removeEventListener('resize', handleResize);
+      motionQuery.removeEventListener('change', start);
     };
   }, []);
 
-  return null;
+  return <canvas ref={canvasRef} className="star-field" aria-hidden="true" />;
 };
 
 export default StarBackground;
