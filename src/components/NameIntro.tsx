@@ -27,10 +27,10 @@ const NameIntro: React.FC<Props> = ({ stage }) => {
 
   return (
     <div
-      className={`name-intro ${stage}`}
+      className={`name-intro ${stage === 'reveal' ? 'name-intro--exit' : ''}`}
       aria-hidden="true"
       onAnimationEnd={(e) => {
-        if (e.animationName === 'moveNameUp') setDone(true)
+        if (e.animationName === 'introExit') setDone(true)
       }}
     >
       {/* viewBox is wide enough for the full phrase at 160px so it never clips on narrow screens */}

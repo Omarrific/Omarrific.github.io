@@ -9,7 +9,8 @@ import ContactSection from './components/ContactSection.tsx'
 import Footer from './components/Footer.tsx'
 import './App.css'
 
-const INTRO_DURATION_MS = 2000
+// Matches the draw + fill timing in NameIntro.css, plus a brief hold.
+const INTRO_DURATION_MS = 2400
 
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches

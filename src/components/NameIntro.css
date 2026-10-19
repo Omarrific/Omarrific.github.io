@@ -29,13 +29,16 @@
   stroke-dashoffset: var(--path-length);
   fill-opacity: 0;
 
+  /* Draw finishes at 2s and the fill lands by 2.1s, leaving a short hold
+     before App switches to "reveal" (INTRO_DURATION_MS). */
   animation:
-    draw 4s ease forwards,
-    fadeIn 1s ease forwards 2s;
+    draw 2s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+    fadeIn 0.7s ease forwards 1.4s;
 }
 
-.name-intro.reveal {
-  animation: moveNameUp 1s var(--ease-out) forwards;
+/* Fade out in place; the site fades in underneath as this clears. */
+.name-intro--exit {
+  animation: introExit 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes draw {
@@ -46,10 +49,9 @@
   to { fill-opacity: 1; }
 }
 
-@keyframes moveNameUp {
+@keyframes introExit {
   to {
-    top: 2%;
-    transform: translate(-50%, 0);
     opacity: 0;
+    transform: translate(-50%, calc(-50% - 16px)) scale(0.98);
   }
 }

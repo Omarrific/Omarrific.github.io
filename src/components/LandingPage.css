@@ -8,12 +8,35 @@
   align-items: center;
   gap: clamp(3rem, 7vw, 6rem);
   padding: 6rem var(--gutter) 4rem;
-  animation: landingFade 1s ease both;
 }
 
-@keyframes landingFade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Entrance after the intro: overlaps the intro's fade-out so the two
+   crossfade, then a light stagger so the hero settles in rather than
+   appearing at once. */
+.name-container,
+.roles,
+.intro-text,
+.icon-buttons,
+.image-section {
+  animation: landingRise 0.9s var(--ease-out) both;
+  animation-delay: var(--enter-delay, 0.4s);
+}
+
+.name-container { --enter-delay: 0.3s; }
+.image-section  { --enter-delay: 0.45s; }
+.roles          { --enter-delay: 0.45s; }
+.intro-text     { --enter-delay: 0.55s; }
+.icon-buttons   { --enter-delay: 0.65s; }
+
+@keyframes landingRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .text-section {
